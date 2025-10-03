@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos2.css">
+    <title></title>
+  </head>
+  <body>
+    <section>
+      <article>
+        <h1>MILANESAS DE POLLO </h1>
+        <h1>INGREDIENTES:</h1>
+        <ul>
+          <li>Pechuga de pollo</li>
+          <li>Tortillas</li>
+          <li>Tomate</li>
+          <li>Chiles verdes</li>
+          <li>Cebolla</li>
+          <li>Ajo</li>
+          <li>Cilantro</li>
+          <li>Sal</li>
+          <li>Crema</li>
+          <li>Queso</li>
+        </ul>
+      </article>
+      <article>
+        <h1>PREPARACION:</h1>
+        <p>Para las enchiladas ponemos a cocer la pechuga de pollo mientras se coce lavamos todas nuestras verduras a excepcion de la cebolla y el ajo,
+           ponemos a hervir en un pocillo con agua los tomates y los chiles, despues de hervirlos molemos en la licuadora los tomates, el chile, el cilantro
+           media cebolla, un diente de ajo, agregamos sal y un poco de agua, despues moler en una cacerola con un poco de aceite sazonamos la salsa,
+           por ultimo armamos las enchiladas con pollo agregamos la salsa, un poco de crema y queso y listo.
+           el chile. </p>
+        <div>
+          <img src="50874.jpg.webp" width="200px" height="200px">
+            </div>
+      </article>
+    </section>
+    <footer class="footer" id="contacto">
+    <div class="footer-content">
+        <div class="footer-section">
+          <h3>🧑‍🍳Mi blog Culinario</h3>
+          <p>Compartiendo recetas desde 2025</p>
+          <p>Est.2025</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces Rapidos </h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p>🌐edwinmtz1708@gmail.com</p>
+          <p>☎️720 384 2381</p>
+          <p>📍Zinacantepec, Mexico.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mi blog Culinario. Creado por Edwin Eduardo.</p>
+    </div>
+  </footer>
+  <script>
+      function toggleMenu(){
+        document.querySelector('nav ul').classList.toggle('active');
+      }
+
+      function openRecipe(e, id){
+        e.preventDefault();
+        document.querySelectorAll('#pages > article').forEach(a=> a.style.display='none');
+        const target = document.getElementById(id);
+        if(target) target.style.display = 'block';
+        target.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      function closePages(e){
+        e.preventDefault();
+        document.querySelectorAll('#pages > article').forEach(a=> a.style.display='none');
+        document.getElementById('recetas').scrollIntoView({behavior:'smooth'});
+      }
+
+
+      document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('.fade-up').forEach((el,i)=>{
+          el.style.animationDelay = (i*80)+'ms';
+        });
+      });
+      const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+
+  if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+  }
+
+  themeToggle.addEventListener('click', () => {
+
+      body.classList.toggle('dark-mode');
+
+
+      if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+      } else {
+          localStorage.setItem('theme', 'light');
+      }
+  });
+    </script>
+  </body>
+</html>

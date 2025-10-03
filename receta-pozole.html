@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos2.css">
+    <title></title>
+  </head>
+  <body>
+    <section>
+      <article>
+        <h1>POZOLE </h1>
+        <h1>INGREDIENTES:</h1>
+        <ul>
+          <li>Grano de maiz</li>
+          <li>Chile</li>
+          <li>Carne de res</li>
+          <li>Sal</li>
+
+        </ul>
+      </article>
+      <article>
+        <h1>PREPARACION:</h1>
+        <p>Para comenzar pondremos a cocer todo el mais pozolero de igual manera lo haremos con la carne y el chile, despues de esto
+        molemos el chile y agregamos todos y cada uno de los ingredientes para que estos se conozcan, despues de esto tendremos el pozole.</p>
+        <div>
+          <img src="pozole-rojo-1.jpg" width="200px" height="200px">
+            </div>
+      </article>
+    </section>
+    <footer class="footer" id="contacto">
+    <div class="footer-content">
+        <div class="footer-section">
+          <h3>🧑‍🍳Mi blog Culinario</h3>
+          <p>Compartiendo recetas desde 2025</p>
+          <p>Est.2025</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces Rapidos </h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p>🌐edwinmtz1708@gmail.com</p>
+          <p>☎️720 384 2381</p>
+          <p>📍Zinacantepec, Mexico.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mi blog Culinario. Creado por Edwin Eduardo.</p>
+    </div>
+  </footer>
+  <script>
+      function toggleMenu(){
+        document.querySelector('nav ').classList.toggle('active');
+      }
+
+      function openRecipe(e, id){
+        e.preventDefault();
+        document.querySelectorAll('#pages > article').forEach(a=> a.style.display='none');
+        const target = document.getElementById(id);
+        if(target) target.style.display = 'block';
+        target.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      function closePages(e){
+        e.preventDefault();
+        document.querySelectorAll('#pages > article').forEach(a=> a.style.display='none');
+        document.getElementById('recetas').scrollIntoView({behavior:'smooth'});
+      }
+
+
+      document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('.fade-up').forEach((el,i)=>{
+          el.style.animationDelay = (i*80)+'ms';
+        });
+      });
+      const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+
+  if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+  }
+
+  themeToggle.addEventListener('click', () => {
+
+      body.classList.toggle('dark-mode');
+
+
+      if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+      } else {
+          localStorage.setItem('theme', 'light');
+      }
+  });
+    </script>
+  </body>
+</html>
